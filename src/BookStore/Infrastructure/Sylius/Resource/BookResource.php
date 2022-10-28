@@ -18,11 +18,34 @@ use Symfony\Component\Uid\AbstractUid;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[Resource(alias: 'app.book')]
-#[Create(routePrefix: 'admin', template: '@SyliusUxSemanticUi/crud/create.html.twig', section: 'admin')]
-#[Update(routePrefix: 'admin', template: '@SyliusUxSemanticUi/crud/update.html.twig', section: 'admin', provider: BookItemProvider::class, processor: CreateBookProcessor::class)]
-#[Index(routePrefix: 'admin', template: '@SyliusUxSemanticUi/crud/index.html.twig', section: 'admin', grid: 'app_book')]
-#[Delete(routePrefix: 'admin', section: 'admin')]
-#[Show(routePrefix: 'admin', template: 'admin/book/show.html.twig', section: 'admin', provider: BookItemProvider::class)]
+#[Create(
+    routePrefix: 'admin',
+    template: '@SyliusUxSemanticUi/crud/create.html.twig',
+    section: 'admin',
+    processor: CreateBookProcessor::class,
+)]
+#[Update(
+    routePrefix: 'admin',
+    template: '@SyliusUxSemanticUi/crud/update.html.twig',
+    section: 'admin',
+    provider: BookItemProvider::class,
+    processor: CreateBookProcessor::class,
+)]
+#[Index(
+    routePrefix: 'admin',
+    template: '@SyliusUxSemanticUi/crud/index.html.twig',
+    section: 'admin',
+    grid: 'app_book',
+)]
+#[Show(
+    routePrefix: 'admin',
+    template: 'admin/book/show.html.twig',
+    section: 'admin',
+    provider: BookItemProvider::class
+)] #[Delete(
+    routePrefix: 'admin',
+    section: 'admin',
+)]
 final class BookResource implements ResourceInterface
 {
     public function __construct(
