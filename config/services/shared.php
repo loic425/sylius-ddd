@@ -6,7 +6,7 @@ use App\Shared\Infrastructure\Sylius\Menu\AdminMenuBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters()->set('locale', 'en');
+    $containerConfigurator->parameters()->set('locale', 'en');
 
     $services = $containerConfigurator->services();
 

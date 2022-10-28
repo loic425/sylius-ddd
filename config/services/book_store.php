@@ -12,6 +12,8 @@ use App\BookStore\Infrastructure\ApiPlatform\State\Provider\BookCollectionProvid
 use App\BookStore\Infrastructure\ApiPlatform\State\Provider\BookItemProvider;
 use App\BookStore\Infrastructure\ApiPlatform\State\Provider\CheapestBooksProvider;
 use App\BookStore\Infrastructure\Doctrine\DoctrineBookRepository;
+use App\BookStore\Infrastructure\Sylius\State\Provider as SyliusProvider;
+use App\BookStore\Infrastructure\Sylius\State\Processor as SyliusProcessor;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -25,13 +27,17 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // Sylius providers
 
-    $services->set(\App\BookStore\Infrastructure\Sylius\State\Provider\BookItemProvider::class)
+    $services->set(SyliusProvider\BookItemProvider::class)
         ->autoconfigure(false)
         ->tag('sylius.state_provider', ['priority' => 0]);
 
     // Sylius processors
 
-    $services->set(\App\BookStore\Infrastructure\Sylius\State\Processor\CreateBookProcessor::class)
+    $services->set(SyliusProcessor\CreateBookProcessor::class)
+        ->autoconfigure(false)
+        ->tag('sylius.state_processor', ['priority' => 0]);
+
+    $services->set(SyliusProcessor\UpdateBookProcessor::class)
         ->autoconfigure(false)
         ->tag('sylius.state_processor', ['priority' => 0]);
 

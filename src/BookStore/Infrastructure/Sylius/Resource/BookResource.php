@@ -6,6 +6,7 @@ namespace App\BookStore\Infrastructure\Sylius\Resource;
 
 use App\BookStore\Domain\Model\Book;
 use App\BookStore\Infrastructure\Sylius\State\Processor\CreateBookProcessor;
+use App\BookStore\Infrastructure\Sylius\State\Processor\UpdateBookProcessor;
 use App\BookStore\Infrastructure\Sylius\State\Provider\BookItemProvider;
 use Sylius\Component\Resource\Metadata\Create;
 use Sylius\Component\Resource\Metadata\Delete;
@@ -29,7 +30,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     template: '@SyliusUxSemanticUi/crud/update.html.twig',
     section: 'admin',
     provider: BookItemProvider::class,
-    processor: CreateBookProcessor::class,
+    processor: UpdateBookProcessor::class,
 )]
 #[Index(
     routePrefix: 'admin',
