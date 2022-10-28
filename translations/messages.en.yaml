@@ -2,4 +2,5 @@ app:
     ui:
         books: Books
         edit_book: Edit book
+        library: Library
         new_book: New book
