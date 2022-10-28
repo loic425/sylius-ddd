@@ -15,6 +15,7 @@ use App\BookStore\Infrastructure\Doctrine\DoctrineBookRepository;
 use App\BookStore\Infrastructure\Sylius\State\Provider as SyliusProvider;
 use App\BookStore\Infrastructure\Sylius\State\Processor as SyliusProcessor;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Sylius\Bundle\ResourceBundle\Controller\ResourcesCollectionProviderInterface;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
@@ -31,6 +32,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autoconfigure(false)
         ->tag('sylius.state_provider', ['priority' => 0]);
 
+    $services->set(SyliusProvider\BookCollectionProvider::class)
+        ->autoconfigure(false)
+        ->tag('sylius.state_provider', ['priority' => 0]);
+
     // Sylius processors
 
     $services->set(SyliusProcessor\CreateBookProcessor::class)
@@ -38,6 +43,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->tag('sylius.state_processor', ['priority' => 0]);
 
     $services->set(SyliusProcessor\UpdateBookProcessor::class)
+        ->autoconfigure(false)
+        ->tag('sylius.state_processor', ['priority' => 0]);
+
+    $services->set(SyliusProcessor\DeleteBookProcessor::class)
         ->autoconfigure(false)
         ->tag('sylius.state_processor', ['priority' => 0]);
 
@@ -78,4 +87,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // repositories
     $services->set(BookRepositoryInterface::class)
         ->class(DoctrineBookRepository::class);
+
+    $services->alias(ResourcesCollectionProviderInterface::class, 'sylius.resource_controller.resources_collection_provider');
 };

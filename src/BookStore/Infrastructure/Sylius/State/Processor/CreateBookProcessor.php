@@ -18,7 +18,7 @@ use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProcessorInterface;
 use Webmozart\Assert\Assert;
 
-class CreateBookProcessor implements ProcessorInterface
+final class CreateBookProcessor implements ProcessorInterface
 {
     public function __construct(
         private CommandBusInterface $commandBus,

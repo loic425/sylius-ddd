@@ -6,7 +6,9 @@ namespace App\BookStore\Infrastructure\Sylius\Resource;
 
 use App\BookStore\Domain\Model\Book;
 use App\BookStore\Infrastructure\Sylius\State\Processor\CreateBookProcessor;
+use App\BookStore\Infrastructure\Sylius\State\Processor\DeleteBookProcessor;
 use App\BookStore\Infrastructure\Sylius\State\Processor\UpdateBookProcessor;
+use App\BookStore\Infrastructure\Sylius\State\Provider\BookCollectionProvider;
 use App\BookStore\Infrastructure\Sylius\State\Provider\BookItemProvider;
 use Sylius\Component\Resource\Metadata\Create;
 use Sylius\Component\Resource\Metadata\Delete;
@@ -37,15 +39,19 @@ use Symfony\Component\Validator\Constraints as Assert;
     template: '@SyliusUxSemanticUi/crud/index.html.twig',
     section: 'admin',
     grid: 'app_book',
+    provider: BookCollectionProvider::class,
 )]
 #[Show(
     routePrefix: 'admin',
     template: 'admin/book/show.html.twig',
     section: 'admin',
     provider: BookItemProvider::class
-)] #[Delete(
+)]
+#[Delete(
     routePrefix: 'admin',
     section: 'admin',
+    provider: BookItemProvider::class,
+    processor: DeleteBookProcessor::class,
 )]
 final class BookResource implements ResourceInterface
 {
