@@ -6,6 +6,7 @@ namespace App\BookStore\Infrastructure\Symfony\Form\Type;
 
 use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,6 +18,8 @@ final class BookType extends AbstractType
             ->add('name')
             ->add('author')
             ->add('description')
+            ->add('content', TextareaType::class)
+            ->add('price')
         ;
     }
 

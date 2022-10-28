@@ -1,3 +1,5 @@
 app:
     ui:
         books: Books
+        edit_book: Edit book
+        new_book: New book
