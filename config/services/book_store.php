@@ -23,12 +23,17 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->load('App\\BookStore\\', __DIR__.'/../../src/BookStore');
 
-
     // Sylius providers
 
     $services->set(\App\BookStore\Infrastructure\Sylius\State\Provider\BookItemProvider::class)
         ->autoconfigure(false)
         ->tag('sylius.state_provider', ['priority' => 0]);
+
+    // Sylius processors
+
+    $services->set(\App\BookStore\Infrastructure\Sylius\State\Processor\CreateBookProcessor::class)
+        ->autoconfigure(false)
+        ->tag('sylius.state_processor', ['priority' => 0]);
 
     // providers
     $services->set(CheapestBooksProvider::class)

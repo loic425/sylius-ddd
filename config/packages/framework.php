@@ -9,8 +9,14 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         'framework',
         [
             'secret' => '%env(APP_SECRET)%',
-            'http_method_override' => false,
+            'http_method_override' => true,
             'php_errors' => ['log' => 4096],
-        ]
+            'session' => [
+                'handler_id' => null,
+                'cookie_secure' => 'auto',
+                'cookie_samesite' => 'lax',
+                'storage_factory_id' => 'session.storage.factory.native',
+            ],
+        ],
     );
 };

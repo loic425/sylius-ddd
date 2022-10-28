@@ -7,7 +7,7 @@ namespace App\BookStore\Infrastructure\Sylius\State\Provider;
 use App\BookStore\Application\Query\FindBookQuery;
 use App\BookStore\Domain\Model\Book;
 use App\BookStore\Domain\ValueObject\BookId;
-use App\BookStore\Infrastructure\ApiPlatform\Resource\BookResource;
+use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use App\Shared\Application\Query\QueryBusInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Component\Resource\Metadata\Operation;
