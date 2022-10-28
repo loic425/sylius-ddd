@@ -1,6 +1,8 @@
-# Domain Driven Design and Sylius Resource 2.0
+# Domain Driven Design and Sylius Resource 2
 
 An example project of **Domain Driven Design** using **Sylius Resource 2** and following the **hexagonal architecture**.
+
+This project is based on [Domain Driven Design and API Platform 3](https://github.com/mtarld/apip-ddd)
 
 This example has been explained during the [API Platform conference 2022](https://api-platform.com/con/2022/conferences/domain-driven-design-with-api-platform-3/)
 ([slides](https://slides.com/mathiasarlaud/apip-con-ddd-api-p-3), [video](https://www.youtube.com/watch?v=SSQal3Msi9g)).
@@ -24,4 +26,8 @@ It could and should be improved, therefore feel free to submit issues and pull r
 To ensure that the CI will succeed whenever contributing, make sure that either static analysis and tests are successful by running `make ci`
 
 ## Authors
+
+[Loïc Frémont](https://github.com/loic425)
+
+For the initial project:
 [Mathias Arlaud](https://github.com/mtarld) with the help of [Robin Chalas](https://github.com/chalasr)
