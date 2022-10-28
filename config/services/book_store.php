@@ -12,8 +12,6 @@ use App\BookStore\Infrastructure\ApiPlatform\State\Provider\BookCollectionProvid
 use App\BookStore\Infrastructure\ApiPlatform\State\Provider\BookItemProvider;
 use App\BookStore\Infrastructure\ApiPlatform\State\Provider\CheapestBooksProvider;
 use App\BookStore\Infrastructure\Doctrine\DoctrineBookRepository;
-use App\BookStore\Infrastructure\Sylius\State\Provider as SyliusProvider;
-use App\BookStore\Infrastructure\Sylius\State\Processor as SyliusProcessor;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Sylius\Bundle\ResourceBundle\Controller\ResourcesCollectionProviderInterface;
 
@@ -25,30 +23,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->autoconfigure();
 
     $services->load('App\\BookStore\\', __DIR__.'/../../src/BookStore');
-
-    // Sylius providers
-
-    $services->set(SyliusProvider\BookItemProvider::class)
-        ->autoconfigure(false)
-        ->tag('sylius.state_provider', ['priority' => 0]);
-
-    $services->set(SyliusProvider\BookCollectionProvider::class)
-        ->autoconfigure(false)
-        ->tag('sylius.state_provider', ['priority' => 0]);
-
-    // Sylius processors
-
-    $services->set(SyliusProcessor\CreateBookProcessor::class)
-        ->autoconfigure(false)
-        ->tag('sylius.state_processor', ['priority' => 0]);
-
-    $services->set(SyliusProcessor\UpdateBookProcessor::class)
-        ->autoconfigure(false)
-        ->tag('sylius.state_processor', ['priority' => 0]);
-
-    $services->set(SyliusProcessor\DeleteBookProcessor::class)
-        ->autoconfigure(false)
-        ->tag('sylius.state_processor', ['priority' => 0]);
 
     // providers
     $services->set(CheapestBooksProvider::class)
