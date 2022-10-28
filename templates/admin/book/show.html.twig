@@ -1,0 +1,34 @@
+{% extends '@SyliusUxSemanticUi/layout.html.twig' %}
+
+{% set header = resource.name %}
+
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
+
+{% block content %}
+
+    {% include 'admin/book/show/_header.html.twig' %}
+
+    <div class="ui divider"></div>
+
+    <div id="book-details">
+        <h4 class="ui top attached large header">Details</h4>
+        <div class="ui attached segment">
+            <table class="ui very basic celled table">
+                <tbody>
+                <tr>
+                    <td class="five wide"><strong class="gray text">Author</strong></td>
+                    <td>{{ resource.author }}</td>
+                </tr>
+                <tr>
+                    <td class="five wide"><strong class="gray text">Description</strong></td>
+                    <td>
+                        <p>
+                            {{ resource.description|sanitize_html }}
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

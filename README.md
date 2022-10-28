@@ -1,6 +1,6 @@
-# Domain Driven Design and API Platform 3
+# Domain Driven Design and Sylius Resource 2.0
 
-An example project of **Domain Driven Design** using **API Platform 3** and following the **hexagonal architecture**.
+An example project of **Domain Driven Design** using **Sylius Resource 2** and following the **hexagonal architecture**.
 
 This example has been explained during the [API Platform conference 2022](https://api-platform.com/con/2022/conferences/domain-driven-design-with-api-platform-3/)
 ([slides](https://slides.com/mathiasarlaud/apip-con-ddd-api-p-3), [video](https://www.youtube.com/watch?v=SSQal3Msi9g)).
@@ -8,10 +8,12 @@ This example has been explained during the [API Platform conference 2022](https:
 ## Getting started
 If you want to try to use and tweak that example, you can follow these steps:
 
-1. Run `git clone https://github.com/mtarld/apip-ddd` to clone the project
-1. Run `make install` to install the project
-1. Run `make start` to up your containers
-1. Visit https://localhost/api and play with your app!
+1. Run `git clone https://github.com/loic425/sylius-ddd` to clone the project
+2. Run `composer install` to install the project 
+3. Run `symfony console doctrine:database:create` to create the database
+4. Run `symfony console doctrine:schema:create` to create the schema
+5. Run `symfony serve -d` to up your local server
+6. Visit https://localhost:8000/admin and play with your app!
 
 ## Contributing
 That implementation is pragmatic and far for being uncriticable.
