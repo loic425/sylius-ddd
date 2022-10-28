@@ -14,8 +14,9 @@ If you want to try to use and tweak that example, you can follow these steps:
 2. Run `composer install` to install the project 
 3. Run `symfony console doctrine:database:create` to create the database
 4. Run `symfony console doctrine:schema:create` to create the schema
-5. Run `symfony serve -d` to up your local server
-6. Visit https://localhost:8000/admin and play with your app!
+5. Run `docker-compose up -d` to run the containers
+6. Run `symfony serve -d` to up your local server
+7. Visit https://localhost:8000/admin and play with your app!
 
 ## Contributing
 That implementation is pragmatic and far for being uncriticable.
