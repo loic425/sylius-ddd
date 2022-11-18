@@ -3578,12 +3578,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusResourceBundle.git",
-                "reference": "14ef74d3ba73fe1bfcb71c91cb12193c71a1f027"
+                "reference": "bacf255dc3f9dd11a4bdd4ef7852d4c65a2df5b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusResourceBundle/zipball/14ef74d3ba73fe1bfcb71c91cb12193c71a1f027",
-                "reference": "14ef74d3ba73fe1bfcb71c91cb12193c71a1f027",
+                "url": "https://api.github.com/repos/Sylius/SyliusResourceBundle/zipball/bacf255dc3f9dd11a4bdd4ef7852d4c65a2df5b2",
+                "reference": "bacf255dc3f9dd11a4bdd4ef7852d4c65a2df5b2",
                 "shasum": ""
             },
             "require": {
@@ -3686,7 +3686,7 @@
                 "issues": "https://github.com/Sylius/SyliusResourceBundle/issues",
                 "source": "https://github.com/Sylius/SyliusResourceBundle/tree/poc/2.0"
             },
-            "time": "2022-10-28T22:09:17+00:00"
+            "time": "2022-11-18T11:03:56+00:00"
         },
         {
             "name": "symfony/asset",

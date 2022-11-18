@@ -14,6 +14,7 @@ use Sylius\Component\Resource\Metadata\Create;
 use Sylius\Component\Resource\Metadata\Delete;
 use Sylius\Component\Resource\Metadata\Index;
 use Sylius\Component\Resource\Metadata\Resource;
+use Sylius\Component\Resource\Metadata\Section;
 use Sylius\Component\Resource\Metadata\Show;
 use Sylius\Component\Resource\Metadata\Update;
 use Sylius\Component\Resource\Model\ResourceInterface;
@@ -21,37 +22,31 @@ use Symfony\Component\Uid\AbstractUid;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[Resource(alias: 'app.book')]
-#[Create(
+#[Section(
+    name: 'admin',
     routePrefix: 'admin',
-    template: '@SyliusUxSemanticUi/crud/create.html.twig',
-    section: 'admin',
-    processor: CreateBookProcessor::class,
-)]
-#[Update(
-    routePrefix: 'admin',
-    template: '@SyliusUxSemanticUi/crud/update.html.twig',
-    section: 'admin',
-    provider: BookItemProvider::class,
-    processor: UpdateBookProcessor::class,
-)]
-#[Index(
-    routePrefix: 'admin',
-    template: '@SyliusUxSemanticUi/crud/index.html.twig',
-    section: 'admin',
-    grid: 'app_book',
-    provider: BookCollectionProvider::class,
-)]
-#[Show(
-    routePrefix: 'admin',
-    template: 'admin/book/show.html.twig',
-    section: 'admin',
-    provider: BookItemProvider::class
-)]
-#[Delete(
-    routePrefix: 'admin',
-    section: 'admin',
-    provider: BookItemProvider::class,
-    processor: DeleteBookProcessor::class,
+    templatesDir: '@SyliusUxSemanticUi/crud',
+    operations: [
+        new Create(
+            processor: CreateBookProcessor::class,
+        ),
+        new Update(
+            provider: BookItemProvider::class,
+            processor: UpdateBookProcessor::class,
+        ),
+        new Index(
+            grid: 'app_book',
+            provider: BookCollectionProvider::class,
+        ),
+        new Show(
+            template: 'admin/book/show.html.twig',
+            provider: BookItemProvider::class,
+        ),
+        new Delete(
+            provider: BookItemProvider::class,
+            processor: DeleteBookProcessor::class,
+        ),
+    ],
 )]
 final class BookResource implements ResourceInterface
 {
