@@ -25,7 +25,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[Section(
     name: 'admin',
     routePrefix: 'admin',
-    templatesDir: '@SyliusUxSemanticUi/crud',
+    templatesDir: '@SyliusAdminUi/crud',
     operations: [
         new Create(
             processor: CreateBookProcessor::class,

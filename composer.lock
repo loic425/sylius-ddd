@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35b974aa09a6fe5081311fa9d2df38f0",
+    "content-hash": "d04f46427c5c1b6ebadc74dde94e0281",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2228,6 +2228,65 @@
             "time": "2022-09-13T10:33:30+00:00"
         },
         {
+            "name": "laminas/laminas-stdlib",
+            "version": "3.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-stdlib.git",
+                "reference": "63b66bd4b696f024f42616b9d95cdb10e5109c27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/63b66bd4b696f024f42616b9d95cdb10e5109c27",
+                "reference": "63b66bd4b696f024f42616b9d95cdb10e5109c27",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.0.0 || ~8.1.0 || ~8.2.0"
+            },
+            "conflict": {
+                "zendframework/zend-stdlib": "*"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "^2.4.0",
+                "phpbench/phpbench": "^1.2.6",
+                "phpunit/phpunit": "^9.5.25",
+                "psalm/plugin-phpunit": "^0.17.0",
+                "vimeo/psalm": "^4.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "SPL extensions, array utilities, error handlers, and more",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "laminas",
+                "stdlib"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-stdlib/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-stdlib/issues",
+                "rss": "https://github.com/laminas/laminas-stdlib/releases.atom",
+                "source": "https://github.com/laminas/laminas-stdlib"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2022-10-10T19:10:24+00:00"
+        },
+        {
             "name": "league/uri",
             "version": "6.8.0",
             "source": {
@@ -2404,18 +2463,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/loic425/sylius-ux.git",
-                "reference": "925a45ee33484979d88aff6853cbad3340af510b"
+                "reference": "4f0adf6be8859343ce74f7195d4b0ddd475a90e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loic425/sylius-ux/zipball/925a45ee33484979d88aff6853cbad3340af510b",
-                "reference": "925a45ee33484979d88aff6853cbad3340af510b",
+                "url": "https://api.github.com/repos/loic425/sylius-ux/zipball/4f0adf6be8859343ce74f7195d4b0ddd475a90e8",
+                "reference": "4f0adf6be8859343ce74f7195d4b0ddd475a90e8",
                 "shasum": ""
             },
             "require": {
                 "pagerfanta/doctrine-orm-adapter": "^3.6",
                 "pagerfanta/twig": "^3.6",
                 "php": "^8.0",
+                "sylius/theme-bundle": "^2.3",
+                "sylius/ui-bundle": "^1.12",
                 "symfony/dependency-injection": "^5.4 || ^6.0",
                 "symfony/http-kernel": "^5.4 || ^6.0",
                 "symfony/property-access": "^5.4 || ^6.0",
@@ -2429,8 +2490,8 @@
                 "matthiasnoback/symfony-dependency-injection-test": "^4.3",
                 "phpspec/phpspec": "^7.2",
                 "phpunit/phpunit": "^9.5",
-                "sylius/grid-bundle": "^1.12@alpha",
-                "sylius/resource-bundle": "^1.10@alpha",
+                "sylius/grid-bundle": "^1.12",
+                "sylius/resource-bundle": "^1.10",
                 "symfony/asset": "^5.4 || ^6.0",
                 "symfony/debug-bundle": "^5.4 || ^6.0",
                 "symfony/dotenv": "^5.4 || ^6.0",
@@ -2463,7 +2524,7 @@
                 "source": "https://github.com/loic425/sylius-ux/tree/main",
                 "issues": "https://github.com/loic425/sylius-ux/issues"
             },
-            "time": "2022-08-23T14:20:19+00:00"
+            "time": "2022-11-16T15:44:47+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -3355,6 +3416,446 @@
             "time": "2021-07-14T16:46:02+00:00"
         },
         {
+            "name": "sonata-project/block-bundle",
+            "version": "4.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataBlockBundle.git",
+                "reference": "5aef2a4362e5e08031fd97e188b039f2ea3e991b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/5aef2a4362e5e08031fd97e188b039f2ea3e991b",
+                "reference": "5aef2a4362e5e08031fd97e188b039f2ea3e991b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^1.6 || ^2.0",
+                "doctrine/common": "^2.7.1 || ^3.0",
+                "php": "^7.4 || ^8.0",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/log": "^1.1 || ^2.0 || ^3.0",
+                "sonata-project/cache": "^2.0",
+                "sonata-project/form-extensions": "^1.4",
+                "symfony/asset": "^4.4 || ^5.4 || ^6.0",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/console": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+                "symfony/event-dispatcher-contracts": "^1.1 || ^2.0 || ^3.0",
+                "symfony/form": "^4.4 || ^5.4 || ^6.0",
+                "symfony/framework-bundle": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+                "symfony/options-resolver": "^4.4 || ^5.4 || ^6.0",
+                "symfony/twig-bundle": "^4.4 || ^5.4 || ^6.0",
+                "symfony/validator": "^4.4 || ^5.4 || ^6.0",
+                "twig/twig": "^2.12.1 || ^3.0"
+            },
+            "conflict": {
+                "doctrine/annotations": "<1.7",
+                "knplabs/knp-menu-bundle": "<3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "knplabs/knp-menu": "^3.1",
+                "knplabs/knp-menu-bundle": "^3.0",
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpstan/phpstan-symfony": "^1.0",
+                "phpunit/phpunit": "^9.5.13",
+                "psalm/plugin-phpunit": "^0.16",
+                "psalm/plugin-symfony": "^3.0",
+                "rector/rector": "^0.14",
+                "sonata-project/doctrine-extensions": "^1.10.1",
+                "symfony/browser-kit": "^4.4 || ^5.4 || ^6.0",
+                "symfony/debug": "^4.4 || ^5.4 || ^6.0",
+                "symfony/phpunit-bridge": "^6.1",
+                "symfony/stopwatch": "^4.4 || ^5.4 || ^6.0",
+                "vimeo/psalm": "^4.1"
+            },
+            "suggest": {
+                "knplabs/knp-menu-bundle": "Required to use the menu block"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\BlockBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "https://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataBlockBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataBlockBundle",
+            "homepage": "https://docs.sonata-project.org/projects/SonataBlockBundle",
+            "keywords": [
+                "block",
+                "sonata"
+            ],
+            "support": {
+                "issues": "https://github.com/sonata-project/SonataBlockBundle/issues",
+                "source": "https://github.com/sonata-project/SonataBlockBundle/tree/4.19.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/OskarStark",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/VincentLanglet",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/core23",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/greg0ire",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-10-25T08:24:56+00:00"
+        },
+        {
+            "name": "sonata-project/cache",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/cache.git",
+                "reference": "296a257c679cffd91b4a5183e55ed1200db79ea4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/cache/zipball/296a257c679cffd91b4a5183e55ed1200db79ea4",
+                "reference": "296a257c679cffd91b4a5183e55ed1200db79ea4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 || ^8.0",
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.8",
+                "doctrine/phpcr-odm": "<1.4",
+                "predis/predis": "<1.1"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.8",
+                "doctrine/phpcr-odm": "^1.4",
+                "jackalope/jackalope-doctrine-dbal": "^1.2",
+                "predis/predis": "^1.1",
+                "symfony/phpunit-bridge": "^5.3"
+            },
+            "suggest": {
+                "doctrine/orm": "ORM support",
+                "doctrine/phpcr-odm": "PHPCR ODM support",
+                "ext-apc": "Caching with ext/apc",
+                "ext-memcached": "Caching with ext/memcached",
+                "predis/predis": "Install redis php"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@gmail.com",
+                    "homepage": "https://sonata-project.org/"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/cache/contributors"
+                }
+            ],
+            "description": "Cache library",
+            "homepage": "https://github.com/sonata-project/cache",
+            "keywords": [
+                "cache",
+                "memcached",
+                "mongodb",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/sonata-project/cache/issues",
+                "source": "https://github.com/sonata-project/cache/tree/2.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/OskarStark",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/VincentLanglet",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/core23",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/wbloszyk",
+                    "type": "github"
+                }
+            ],
+            "abandoned": true,
+            "time": "2021-08-03T08:06:40+00:00"
+        },
+        {
+            "name": "sonata-project/doctrine-extensions",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/sonata-doctrine-extensions.git",
+                "reference": "07dcf9b05a87b4b87e86de9c3e6ba8f5adbbd32f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/sonata-doctrine-extensions/zipball/07dcf9b05a87b4b87e86de9c3e6ba8f5adbbd32f",
+                "reference": "07dcf9b05a87b4b87e86de9c3e6ba8f5adbbd32f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^3.0",
+                "doctrine/persistence": "^2.5 || ^3.0",
+                "php": "^8.0"
+            },
+            "conflict": {
+                "doctrine/doctrine-bundle": "<2.6",
+                "doctrine/mongodb-odm": "<2.2",
+                "doctrine/orm": "<2.10"
+            },
+            "require-dev": {
+                "doctrine/common": "^3.0",
+                "doctrine/doctrine-bundle": "^2.6",
+                "doctrine/mongodb-odm": "^2.2",
+                "doctrine/orm": "^2.10",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2.1",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5.13",
+                "psalm/plugin-phpunit": "^0.16",
+                "rector/rector": "^0.13",
+                "symfony/dependency-injection": "^5.4 || ^6.1",
+                "symfony/doctrine-bridge": "^5.4 || ^6.1",
+                "symfony/expression-language": "^5.4 || ^6.1",
+                "symfony/framework-bundle": "^5.4 || ^6.1",
+                "symfony/phpunit-bridge": "^6.1",
+                "vimeo/psalm": "^4.1"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "If you use mongo",
+                "doctrine/orm": "If you use doctrine orm",
+                "symfony/framework-bundle": "If you want to use symfony"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\Doctrine\\": "src/",
+                    "Sonata\\Doctrine\\Bridge\\Symfony\\": "src/Bridge/Symfony/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/sonata-doctrine-extensions/contributors"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "https://github.com/sonata-project/sonata-doctrine-extensions",
+            "keywords": [
+                "doctrine",
+                "doctrine2",
+                "json"
+            ],
+            "support": {
+                "issues": "https://github.com/sonata-project/sonata-doctrine-extensions/issues",
+                "source": "https://github.com/sonata-project/sonata-doctrine-extensions/tree/2.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/VincentLanglet",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/core23",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/greg0ire",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jordisala1991",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-08-02T15:26:39+00:00"
+        },
+        {
+            "name": "sonata-project/form-extensions",
+            "version": "1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/form-extensions.git",
+                "reference": "1ecc1691f15adc5cbbaaf7d23d332bebf6629d4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/form-extensions/zipball/1ecc1691f15adc5cbbaaf7d23d332bebf6629d4a",
+                "reference": "1ecc1691f15adc5cbbaaf7d23d332bebf6629d4a",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "^2.1",
+                "jms/serializer": "^2.0 || ^3.0",
+                "php": "^7.4 || ^8.0",
+                "sonata-project/doctrine-extensions": "^1.10.1 || ^2.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+                "symfony/form": "^4.4 || ^5.4 || ^6.0",
+                "symfony/options-resolver": "^4.4 || ^5.4 || ^6.0",
+                "symfony/property-access": "^4.4 || ^5.4 || ^6.0",
+                "symfony/security-csrf": "^4.4 || ^5.4 || ^6.0",
+                "symfony/translation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/translation-contracts": "^1.1 || ^2.5 || ^3.0",
+                "symfony/validator": "^4.4 || ^5.4 || ^6.0",
+                "twig/twig": "^2.12 || ^3.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.0",
+                "doctrine/persistence": "<1.3",
+                "sonata-project/core-bundle": ">=3.13"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.0",
+                "doctrine/persistence": "^1.3 || ^2.0 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.0",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpstan/phpstan-symfony": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16",
+                "psalm/plugin-symfony": "^3.0",
+                "rector/rector": "^0.13",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/framework-bundle": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+                "symfony/phpunit-bridge": "^6.1",
+                "symfony/twig-bridge": "^4.4 || ^5.4 || ^6.0",
+                "vimeo/psalm": "^4.7.2"
+            },
+            "suggest": {
+                "doctrine/persistence": "If you want to use BaseDoctrineORMSerializationType"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\Form\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "https://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/form-extensions/contributors"
+                }
+            ],
+            "description": "Symfony form extensions",
+            "homepage": "https://docs.sonata-project.org/projects/form-extensions",
+            "keywords": [
+                "form",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/sonata-project/form-extensions/issues",
+                "source": "https://github.com/sonata-project/form-extensions/tree/1.18.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/VincentLanglet",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/core23",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/greg0ire",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jordisala1991",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-28T10:11:36+00:00"
+        },
+        {
             "name": "sylius-labs/polyfill-symfony-event-dispatcher",
             "version": "v1.1.0",
             "source": {
@@ -3687,6 +4188,272 @@
                 "source": "https://github.com/Sylius/SyliusResourceBundle/tree/poc/2.0"
             },
             "time": "2022-11-18T11:03:56+00:00"
+        },
+        {
+            "name": "sylius/theme-bundle",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sylius/SyliusThemeBundle.git",
+                "reference": "b167b1b6b223c02ff9e819f36f57709ba1dfee43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sylius/SyliusThemeBundle/zipball/b167b1b6b223c02ff9e819f36f57709ba1dfee43",
+                "reference": "b167b1b6b223c02ff9e819f36f57709ba1dfee43",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/asset": "^5.4 || ^6.0",
+                "symfony/config": "^5.4 || ^6.0",
+                "symfony/console": "^5.4 || ^6.0",
+                "symfony/dependency-injection": "^5.4 || ^6.0",
+                "symfony/filesystem": "^5.4 || ^6.0",
+                "symfony/finder": "^5.4 || ^6.0",
+                "symfony/form": "^4.4 || ^5.4 || ^6.0",
+                "symfony/framework-bundle": "^5.4 || ^6.0",
+                "symfony/http-foundation": "^5.4 || ^6.0",
+                "symfony/http-kernel": "^5.4 || ^6.0",
+                "symfony/options-resolver": "^5.4 || ^6.0",
+                "symfony/service-contracts": "^1.1 || ^2.0 || ^3.0",
+                "symfony/translation": "^5.4 || ^6.0",
+                "symfony/translation-contracts": "^1.1 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+                "mikey179/vfsstream": "^1.6",
+                "phpspec/phpspec": "^7.0",
+                "phpunit/phpunit": "^9.4",
+                "rector/rector": "^0.11.57",
+                "sylius-labs/coding-standard": "^4.0.2",
+                "symfony/browser-kit": "^5.4 || ^6.0",
+                "symfony/security-csrf": "^5.4 || ^6.0",
+                "symfony/twig-bundle": "^5.4 || ^6.0",
+                "twig/twig": "^2.0 || ^3.0",
+                "vimeo/psalm": "4.23.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\Bundle\\ThemeBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "homepage": "https://kamilkokot.com"
+                },
+                {
+                    "name": "Sylius project",
+                    "homepage": "https://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Sylius/Sylius/contributors"
+                }
+            ],
+            "description": "Themes management for Symfony projects.",
+            "homepage": "https://sylius.com",
+            "keywords": [
+                "themes",
+                "theming"
+            ],
+            "support": {
+                "issues": "https://github.com/Sylius/SyliusThemeBundle/issues",
+                "source": "https://github.com/Sylius/SyliusThemeBundle/tree/v2.3.0"
+            },
+            "time": "2022-09-04T09:43:42+00:00"
+        },
+        {
+            "name": "sylius/ui",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:loic425/sylius-ui.git",
+                "reference": "7c7f3ec5d33038575a046818a14347e22f469354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/loic425/sylius-ui/zipball/7c7f3ec5d33038575a046818a14347e22f469354",
+                "reference": "7c7f3ec5d33038575a046818a14347e22f469354",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "symfony/http-kernel": "^5.4 || ^6.0"
+            },
+            "replace": {
+                "sylius/admin-ui": "self.version",
+                "sylius/core-ui": "self.version"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.13",
+                "doctrine/doctrine-bundle": "^2.7",
+                "doctrine/doctrine-fixtures-bundle": "^3.4",
+                "doctrine/orm": "^2.13",
+                "pagerfanta/doctrine-orm-adapter": "^3.6",
+                "pagerfanta/twig": "^3.6",
+                "phpstan/phpstan": "^1.9",
+                "sylius/admin-ui": "dev-main",
+                "sylius/core-ui": "dev-main",
+                "sylius/grid-bundle": "^1.12",
+                "sylius/resource-bundle": "^1.10",
+                "sylius/ui-bundle": "^1.12",
+                "symfony/config": "^5.4 || ^6.0",
+                "symfony/debug-bundle": "^5.4 || ^6.0",
+                "symfony/dotenv": "^5.4 || ^6.0",
+                "symfony/flex": "^2.2",
+                "symfony/framework-bundle": "^5.4 || ^6.0",
+                "symfony/maker-bundle": "^1.48",
+                "symfony/proxy-manager-bridge": "^5.4 || ^6.0",
+                "symfony/routing": "^5.4 || ^6.0",
+                "symfony/runtime": "^5.4 || ^6.0",
+                "symfony/web-profiler-bundle": "^5.4 || ^6.0",
+                "symfony/yaml": "^5.4 || ^6.0",
+                "vimeo/psalm": "^4.30",
+                "zenstruck/foundry": "^1.23"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "bin-dir": "tests/Application/bin",
+                "config-dir": "tests/Application/config",
+                "src-dir": "tests/Application/src",
+                "var-dir": "tests/Application/var",
+                "public-dir": "tests/Application/public",
+                "symfony": {
+                    "require": "^5.4 || ^6.0"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\AdminUi\\": "src/AdminUi/src/",
+                    "Sylius\\BootstrapUi\\": "src/BootstrapUi/src/",
+                    "Sylius\\SemanticUi\\": "src/SemanticUi/src/",
+                    "Sylius\\TailwindUi\\": "src/TailwindUi/src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "App\\": "tests/Application/src"
+                },
+                "classmap": [
+                    "tests/Application/src/Kernel.php"
+                ]
+            },
+            "scripts": {
+                "auto-scripts": {
+                    "cache:clear": "symfony-cmd",
+                    "assets:install %PUBLIC_DIR%": "symfony-cmd"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Ui components for Sylius stack.",
+            "support": {
+                "source": "https://github.com/loic425/sylius-ui/tree/main",
+                "issues": "https://github.com/loic425/sylius-ui/issues"
+            },
+            "time": "2022-11-28T16:12:16+00:00"
+        },
+        {
+            "name": "sylius/ui-bundle",
+            "version": "v1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sylius/SyliusUiBundle.git",
+                "reference": "0e3b6e06036db7db2a05a78147000de61ccae2a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/0e3b6e06036db7db2a05a78147000de61ccae2a4",
+                "reference": "0e3b6e06036db7db2a05a78147000de61ccae2a4",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^1.6",
+                "knplabs/knp-menu": "^3.1",
+                "knplabs/knp-menu-bundle": "^3.0",
+                "laminas/laminas-stdlib": "^3.3.1",
+                "php": "^8.0",
+                "sonata-project/block-bundle": "^4.2",
+                "sylius-labs/polyfill-symfony-event-dispatcher": "^1.0.1",
+                "sylius/grid-bundle": "^1.11",
+                "symfony/config": "^5.4 || ^6.0",
+                "symfony/framework-bundle": "^5.4 || ^6.0",
+                "symfony/security-bundle": "^5.4 || ^6.0",
+                "symfony/security-core": "^5.4 || ^6.0",
+                "symfony/templating": "^5.4 || ^6.0",
+                "symfony/webpack-encore-bundle": "^1.15"
+            },
+            "conflict": {
+                "twig/twig": "^1.0"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+                "phpspec/phpspec": "^7.2",
+                "phpunit/phpunit": "^8.5",
+                "symfony/dependency-injection": "^5.4 || ^6.0",
+                "symfony/form": "^5.4 || ^6.0",
+                "twig/twig": "^2.12 || ^3.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\Bundle\\UiBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paweł Jędrzejewski",
+                    "homepage": "https://pjedrzejewski.com"
+                },
+                {
+                    "name": "Sylius project",
+                    "homepage": "https://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Sylius/Sylius/contributors"
+                }
+            ],
+            "description": "Generic UI bundle for Sylius eCommerce components.",
+            "homepage": "https://sylius.com",
+            "keywords": [
+                "ecommerce",
+                "shop",
+                "store",
+                "sylius",
+                "ui",
+                "user interface",
+                "webshop"
+            ],
+            "support": {
+                "source": "https://github.com/Sylius/SyliusUiBundle/tree/v1.12.0"
+            },
+            "time": "2022-10-31T12:00:31+00:00"
         },
         {
             "name": "symfony/asset",
@@ -7266,6 +8033,74 @@
             "time": "2022-10-10T09:34:31+00:00"
         },
         {
+            "name": "symfony/templating",
+            "version": "v6.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/templating.git",
+                "reference": "6d8e5d7cc2d7759aab512e7c7ac3d0bad1c7d3eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/templating/zipball/6d8e5d7cc2d7759aab512e7c7ac3d0bad1c7d3eb",
+                "reference": "6d8e5d7cc2d7759aab512e7c7ac3d0bad1c7d3eb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "require-dev": {
+                "psr/log": "^1|^2|^3"
+            },
+            "suggest": {
+                "psr/log-implementation": "For using debug logging in loaders"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Templating\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides all the tools needed to build any kind of template system",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/templating/tree/v6.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-27T17:24:16+00:00"
+        },
+        {
             "name": "symfony/translation",
             "version": "v6.1.6",
             "source": {
@@ -8077,6 +8912,79 @@
                 }
             ],
             "time": "2022-02-25T11:15:52+00:00"
+        },
+        {
+            "name": "symfony/webpack-encore-bundle",
+            "version": "v1.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/webpack-encore-bundle.git",
+                "reference": "bb399930c0299866258b616a74a27b50b94c5d45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/bb399930c0299866258b616a74a27b50b94c5d45",
+                "reference": "bb399930c0299866258b616a74a27b50b94c5d45",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/asset": "^4.4 || ^5.0 || ^6.0",
+                "symfony/config": "^4.4 || ^5.0 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.0 || ^6.0",
+                "symfony/deprecation-contracts": "^2.1 || ^3.0",
+                "symfony/http-kernel": "^4.4 || ^5.0 || ^6.0",
+                "symfony/polyfill-php80": "^1.25.0",
+                "symfony/service-contracts": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/phpunit-bridge": "^5.3 || ^6.0",
+                "symfony/twig-bundle": "^4.4 || ^5.0 || ^6.0",
+                "symfony/web-link": "^4.4 || ^5.0 || ^6.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/webpack-encore",
+                    "url": "https://github.com/symfony/webpack-encore"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\WebpackEncoreBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Integration with your Symfony app & Webpack Encore!",
+            "support": {
+                "issues": "https://github.com/symfony/webpack-encore-bundle/issues",
+                "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.16.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-10-18T15:21:06+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -12268,7 +13176,8 @@
     "stability-flags": {
         "loic425/sylius-ux": 20,
         "sylius/grid-bundle": 10,
-        "sylius/resource-bundle": 20
+        "sylius/resource-bundle": 20,
+        "sylius/ui": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

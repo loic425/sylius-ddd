@@ -22,4 +22,12 @@ return [
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+    Sylius\AdminUi\Symfony\SyliusAdminUiBundle::class => ['dev' => true],
+    Sylius\SemanticUi\Symfony\SyliusSemanticUiBundle::class => ['dev' => true],
+    Sonata\Doctrine\Bridge\Symfony\SonataDoctrineBundle::class => ['all' => true],
+    Sonata\Form\Bridge\Symfony\SonataFormBundle::class => ['all' => true],
+    Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+    Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
+    Sylius\Bundle\UiBundle\SyliusUiBundle::class => ['all' => true],
+    Sylius\Bundle\ThemeBundle\SyliusThemeBundle::class => ['all' => true],
 ];

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Shared\Infrastructure\Sylius\Menu\AdminMenuBuilder;
+use Sylius\AdminUi\Menu\MenuBuilderInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -19,6 +20,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services
         ->set(AdminMenuBuilder::class)
-        ->decorate('sylius.ux.menu.admin')
+        ->decorate(MenuBuilderInterface::class)
     ;
 };
