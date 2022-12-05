@@ -9,6 +9,7 @@ use App\BookStore\Domain\ValueObject\BookId;
 use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use App\Shared\Application\Command\CommandBusInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
+use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProcessorInterface;
 use Webmozart\Assert\Assert;
@@ -20,7 +21,7 @@ final class DeleteBookProcessor implements ProcessorInterface
     ) {
     }
 
-    public function process(mixed $data, Operation $operation, RequestConfiguration $configuration): mixed
+    public function process(mixed $data, Operation $operation, Context $context): mixed
     {
         Assert::isInstanceOf($data, BookResource::class);
 

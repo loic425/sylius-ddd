@@ -15,6 +15,7 @@ use App\BookStore\Domain\ValueObject\Price;
 use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use App\Shared\Application\Command\CommandBusInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
+use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProcessorInterface;
 use Webmozart\Assert\Assert;
@@ -26,7 +27,7 @@ final class UpdateBookProcessor implements ProcessorInterface
     ) {
     }
 
-    public function process(mixed $data, Operation $operation, RequestConfiguration $configuration): BookResource
+    public function process(mixed $data, Operation $operation, Context $context): BookResource
     {
         Assert::isInstanceOf($data, BookResource::class);
 
