@@ -8,8 +8,10 @@ use App\BookStore\Infrastructure\Sylius\Repository\BookRepository;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Bundle\ResourceBundle\Controller\ResourcesCollectionProviderInterface;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\RequestConfigurationOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProviderInterface;
+use Webmozart\Assert\Assert;
 
 final class BookCollectionProvider implements ProviderInterface
 {
@@ -21,7 +23,10 @@ final class BookCollectionProvider implements ProviderInterface
 
     public function provide(Operation $operation, Context $context): object|iterable
     {
-        $configuration = $context->get(RequestConfiguration::class);
+        $requestionConfigurationOption = $context->get(RequestConfigurationOption::class);
+        Assert::notNull($requestionConfigurationOption);
+
+        $configuration = $requestionConfigurationOption->configuration();
 
         return $this->resourcesCollectionProvider->get(
             $configuration,
