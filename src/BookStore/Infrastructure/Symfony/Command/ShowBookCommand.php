@@ -7,7 +7,6 @@ use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookItemProvider;
 use App\BookStore\Infrastructure\Sylius\State\Responder\BookItemResponder;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Factory\OperationFactoryInterface;
-use Sylius\Component\Resource\State\ProcessorInterface;
 use Sylius\Component\Resource\State\ProviderInterface;
 use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -15,16 +14,14 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Webmozart\Assert\Assert;
 
 #[AsCommand(name: 'app:show-book')]
 final class ShowBookCommand extends Command
 {
     public function __construct(
-        private ProviderInterface $provider,
-        private ProcessorInterface $processor,
-        private ResponderInterface $responder,
-        private OperationFactoryInterface $operationFactory,
+        private readonly ProviderInterface $provider,
+        private readonly ResponderInterface $responder,
+        private readonly OperationFactoryInterface $operationFactory,
     ) {
         parent::__construct();
     }
