@@ -7,6 +7,7 @@ use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Factory\OperationFactoryInterface;
 use Sylius\Component\Resource\State\CallableProcessor;
 use Sylius\Component\Resource\State\CallableProvider;
+use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -21,6 +22,7 @@ final class ResourceOperationCommand extends Command
     public function __construct(
         private CallableProvider $provider,
         private CallableProcessor $processor,
+        private ResponderInterface $responder,
         private OperationFactoryInterface $operationFactory,
     ) {
         parent::__construct();
@@ -43,7 +45,10 @@ final class ResourceOperationCommand extends Command
 
         $operation = $this->operationFactory->create($operationArgument, []);
 
-        $data = $this->provider->provide($operation, new Context($input, $output));
+        $context = new Context([InputInterface::class => $input, OutputInterface::class => $output]);
+
+        $data = $this->provider->provide($operation, $context);
+        $this->responder->respond($data, $operation, $context);
 
         return Command::SUCCESS;
     }

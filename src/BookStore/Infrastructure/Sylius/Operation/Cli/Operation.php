@@ -8,6 +8,7 @@ class Operation extends BaseOperation
 {
     public function __construct(
         ?string $name = null,
+        ?string $responder = null,
         ?string $template = null,
         ?array $repository = null,
         ?array $criteria = null,
@@ -64,6 +65,7 @@ class Operation extends BaseOperation
             resource: $resource,
             provider: $provider,
             processor: $processor,
+            responder: $responder,
             read: $read,
             validate: $validate,
             write: $write,

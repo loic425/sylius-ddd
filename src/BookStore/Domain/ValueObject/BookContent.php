@@ -10,7 +10,7 @@ use Webmozart\Assert\Assert;
 #[ORM\Embeddable]
 final class BookContent
 {
-    #[ORM\Column(name: 'content', length: 65535)]
+    #[ORM\Column(name: 'content', type: 'text', length: 65535)]
     public readonly string $value;
 
     public function __construct(string $value)

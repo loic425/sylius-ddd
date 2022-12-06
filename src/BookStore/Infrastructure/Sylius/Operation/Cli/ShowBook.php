@@ -3,6 +3,7 @@
 namespace App\BookStore\Infrastructure\Sylius\Operation\Cli;
 
 use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookItemProvider;
+use App\BookStore\Infrastructure\Sylius\State\Responder\BookItemResponder;
 
 final class ShowBook extends Operation
 {
@@ -40,6 +41,7 @@ final class ShowBook extends Operation
     ) {
         parent::__construct(
             name: $name,
+            responder: BookItemResponder::class,
             template: $template,
             repository: $repository,
             criteria: $criteria,

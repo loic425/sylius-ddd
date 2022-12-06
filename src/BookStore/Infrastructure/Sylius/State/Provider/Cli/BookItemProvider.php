@@ -7,17 +7,11 @@ namespace App\BookStore\Infrastructure\Sylius\State\Provider\Cli;
 use App\BookStore\Application\Query\FindBookQuery;
 use App\BookStore\Domain\Model\Book;
 use App\BookStore\Domain\ValueObject\BookId;
-use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use App\Shared\Application\Query\QueryBusInterface;
-use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProviderInterface;
-use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Input\Input;
-use Symfony\Component\Console\Input\InputDefinition;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Uid\Uuid;
 
 final class BookItemProvider implements ProviderInterface
@@ -27,15 +21,13 @@ final class BookItemProvider implements ProviderInterface
     ) {
     }
 
-    public function provide(Operation $operation, Context $context): ?BookResource
+    public function provide(Operation $operation, Context $context): ?Book
     {
-        // dd($context->getIterator()->current());
-
-        $id = (string) $context->get(ArgvInput::class)->getOption('id');
+        $id = (string) $context->get(InputInterface::class)->getOption('id');
 
         /** @var Book|null $model */
         $model = $this->queryBus->ask(new FindBookQuery(new BookId(Uuid::fromString($id))));
 
-        return null !== $model ? BookResource::fromModel($model) : null;
+        return $model;
     }
 }
