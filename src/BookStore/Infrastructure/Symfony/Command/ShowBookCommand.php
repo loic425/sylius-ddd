@@ -6,6 +6,8 @@ use App\BookStore\Infrastructure\Sylius\Operation\Cli\Operation;
 use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookItemProvider;
 use App\BookStore\Infrastructure\Sylius\State\Responder\BookItemResponder;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\InputOption;
+use Sylius\Component\Resource\Context\Option\OutputOption;
 use Sylius\Component\Resource\Metadata\Factory\OperationFactoryInterface;
 use Sylius\Component\Resource\State\ProviderInterface;
 use Sylius\Component\Resource\State\ResponderInterface;
@@ -39,7 +41,7 @@ final class ShowBookCommand extends Command
         $operation = $operation->withProvider(BookItemProvider::class);
         $operation = $operation->withResponder(BookItemResponder::class);
 
-        $context = new Context([InputInterface::class => $input, OutputInterface::class => $output]);
+        $context = new Context(new InputOption($input), new OutputOption($output));
 
         $data = $this->provider->provide($operation, $context);
         $this->responder->respond($data, $operation, $context);

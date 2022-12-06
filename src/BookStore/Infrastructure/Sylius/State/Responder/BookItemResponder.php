@@ -4,6 +4,8 @@ namespace App\BookStore\Infrastructure\Sylius\State\Responder;
 
 use App\BookStore\Domain\Model\Book;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\InputOption;
+use Sylius\Component\Resource\Context\Option\OutputOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Input\InputInterface;
@@ -18,13 +20,13 @@ final class BookItemResponder implements ResponderInterface
      */
     public function respond(mixed $data, Operation $operation, Context $context): void
     {
-        /** @var InputInterface $input */
-        $input = $context->get(InputInterface::class);
+        $inputOption = $context->get(InputOption::class);
+        $outputOption = $context->get(OutputOption::class);
 
-        /** @var OutputInterface $output */
-        $output = $context->get(OutputInterface::class);
+        Assert::notNull($inputOption);
+        Assert::notNull($outputOption);
 
-        $ui = new SymfonyStyle($input, $output);
+        $ui = new SymfonyStyle($inputOption->input(), $outputOption->output());
 
         Assert::isInstanceOf($data, Book::class);
 

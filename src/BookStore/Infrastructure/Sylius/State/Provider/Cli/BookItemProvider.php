@@ -9,10 +9,11 @@ use App\BookStore\Domain\Model\Book;
 use App\BookStore\Domain\ValueObject\BookId;
 use App\Shared\Application\Query\QueryBusInterface;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\InputOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProviderInterface;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Uid\Uuid;
+use Webmozart\Assert\Assert;
 
 final class BookItemProvider implements ProviderInterface
 {
@@ -23,7 +24,10 @@ final class BookItemProvider implements ProviderInterface
 
     public function provide(Operation $operation, Context $context): ?Book
     {
-        $id = (string) $context->get(InputInterface::class)->getArgument('id');
+        $inputOption = $context->get(InputOption::class);
+        Assert::notNull($inputOption);
+
+        $id = (string) $inputOption->input()->getArgument('id');
 
         /** @var Book|null $model */
         $model = $this->queryBus->ask(new FindBookQuery(new BookId(Uuid::fromString($id))));

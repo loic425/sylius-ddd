@@ -11,6 +11,7 @@ use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use App\Shared\Application\Query\QueryBusInterface;
 use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\RequestOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +26,13 @@ final class BookItemProvider implements ProviderInterface
 
     public function provide(Operation $operation, Context $context): ?BookResource
     {
-        $id = (string) $context->get(Request::class)->attributes->get('id');
+        $requestOption = $context->get(RequestOption::class);
+
+        if (null === $requestOption) {
+            return null;
+        }
+
+        $id = (string) $requestOption->request()->attributes->get('id');
 
         /** @var Book|null $model */
         $model = $this->queryBus->ask(new FindBookQuery(new BookId(Uuid::fromString($id))));
