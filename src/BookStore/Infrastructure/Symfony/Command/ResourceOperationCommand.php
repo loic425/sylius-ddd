@@ -5,8 +5,8 @@ namespace App\BookStore\Infrastructure\Symfony\Command;
 use App\BookStore\Infrastructure\Sylius\Operation\Cli\Operation;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Factory\OperationFactoryInterface;
-use Sylius\Component\Resource\State\CallableProcessor;
-use Sylius\Component\Resource\State\CallableProvider;
+use Sylius\Component\Resource\State\ProcessorInterface;
+use Sylius\Component\Resource\State\ProviderInterface;
 use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -20,8 +20,8 @@ use Webmozart\Assert\Assert;
 final class ResourceOperationCommand extends Command
 {
     public function __construct(
-        private CallableProvider $provider,
-        private CallableProcessor $processor,
+        private ProviderInterface $provider,
+        private ProcessorInterface $processor,
         private ResponderInterface $responder,
         private OperationFactoryInterface $operationFactory,
     ) {

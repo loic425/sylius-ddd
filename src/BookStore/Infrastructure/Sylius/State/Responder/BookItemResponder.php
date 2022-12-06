@@ -16,9 +16,12 @@ final class BookItemResponder implements ResponderInterface
     /**
      * @param Book|mixed $data
      */
-    public function respond(mixed $data, Operation $operation, Context $context): mixed
+    public function respond(mixed $data, Operation $operation, Context $context): void
     {
+        /** @var InputInterface $input */
         $input = $context->get(InputInterface::class);
+
+        /** @var OutputInterface $output */
         $output = $context->get(OutputInterface::class);
 
         $ui = new SymfonyStyle($input, $output);
@@ -41,7 +44,5 @@ final class BookItemResponder implements ResponderInterface
 
         $ui->section('Price');
         $ui->writeln((string) $data->price()->amount);
-
-        return null;
     }
 }
