@@ -23,7 +23,7 @@ final class BookItemProvider implements ProviderInterface
 
     public function provide(Operation $operation, Context $context): ?Book
     {
-        $id = (string) $context->get(InputInterface::class)->getOption('id');
+        $id = (string) $context->get(InputInterface::class)->getArgument('id');
 
         /** @var Book|null $model */
         $model = $this->queryBus->ask(new FindBookQuery(new BookId(Uuid::fromString($id))));

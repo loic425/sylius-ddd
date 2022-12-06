@@ -3,6 +3,8 @@
 namespace App\BookStore\Infrastructure\Symfony\Command;
 
 use App\BookStore\Infrastructure\Sylius\Operation\Cli\Operation;
+use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookItemProvider;
+use App\BookStore\Infrastructure\Sylius\State\Responder\BookItemResponder;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Metadata\Factory\OperationFactoryInterface;
 use Sylius\Component\Resource\State\ProcessorInterface;
@@ -12,12 +14,11 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Webmozart\Assert\Assert;
 
-#[AsCommand(name: 'sylius:resource-operation')]
-final class ResourceOperationCommand extends Command
+#[AsCommand(name: 'app:show-book')]
+final class ShowBookCommand extends Command
 {
     public function __construct(
         private ProviderInterface $provider,
@@ -31,19 +32,15 @@ final class ResourceOperationCommand extends Command
     protected function configure(): void
     {
         $this
-            ->addArgument('operation', InputArgument::REQUIRED, 'The operation.')
-            ->addOption('id', null, InputOption::VALUE_REQUIRED, 'The resource id.')
+            ->addArgument('id', InputArgument::REQUIRED, 'The book id.')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        /** @var Operation $operation */
-        $operationArgument = $input->getArgument('operation');
-
-        Assert::true(is_a($operationArgument, Operation::class, true), sprintf('Operation should implement %s.', Operation::class));
-
-        $operation = $this->operationFactory->create($operationArgument, []);
+        $operation = $this->operationFactory->create(Operation::class, []);
+        $operation = $operation->withProvider(BookItemProvider::class);
+        $operation = $operation->withResponder(BookItemResponder::class);
 
         $context = new Context([InputInterface::class => $input, OutputInterface::class => $output]);
 
