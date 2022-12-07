@@ -6,6 +6,7 @@ use App\BookStore\Infrastructure\Sylius\Operation\Cli\Operation;
 use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookCollectionProvider;
 use App\BookStore\Infrastructure\Sylius\State\Responder\BookCollectionResponder;
 use Sylius\Component\Resource\Context\Context;
+use Sylius\Component\Resource\Context\Option\ConsoleOption;
 use Sylius\Component\Resource\Context\Option\InputOption as InputContextOption;
 use Sylius\Component\Resource\Context\Option\OutputOption as OutputContextOption;
 use Sylius\Component\Resource\State\ProviderInterface;
@@ -40,7 +41,7 @@ final class ListBooksCommand extends Command
         $operation = $operation->withProvider(BookCollectionProvider::class);
         $operation = $operation->withResponder(BookCollectionResponder::class);
 
-        $context = new Context(new InputContextOption($input), new OutputContextOption($output));
+        $context = new Context(new ConsoleOption($this), new InputContextOption($input), new OutputContextOption($output));
 
         $data = $this->provider->provide($operation, $context);
         $this->responder->respond($data, $operation, $context);
