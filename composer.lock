@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48e4487548d26bd6b145fc1ea0eb62cc",
+    "content-hash": "71da50058f7b6db713d5c7904addd607",
     "packages": [
         {
             "name": "api-platform/core",
@@ -4018,16 +4018,16 @@
         },
         {
             "name": "sylius/resource-bundle",
-            "version": "dev-poc/2.0.1",
+            "version": "dev-poc/2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/loic425/SyliusResourceBundle.git",
-                "reference": "738f72a1c38f70a317c57845092e349c454c5ed0"
+                "reference": "0c2d7dac12cac46c296fddce72e8ca1cde87679d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loic425/SyliusResourceBundle/zipball/738f72a1c38f70a317c57845092e349c454c5ed0",
-                "reference": "738f72a1c38f70a317c57845092e349c454c5ed0",
+                "url": "https://api.github.com/repos/loic425/SyliusResourceBundle/zipball/0c2d7dac12cac46c296fddce72e8ca1cde87679d",
+                "reference": "0c2d7dac12cac46c296fddce72e8ca1cde87679d",
                 "shasum": ""
             },
             "require": {
@@ -4145,9 +4145,9 @@
                 "sylius"
             ],
             "support": {
-                "source": "https://github.com/loic425/SyliusResourceBundle/tree/poc/2.0.1"
+                "source": "https://github.com/loic425/SyliusResourceBundle/tree/poc/2.0"
             },
-            "time": "2022-12-13T18:01:21+00:00"
+            "time": "2022-12-13T20:35:00+00:00"
         },
         {
             "name": "sylius/ui",
