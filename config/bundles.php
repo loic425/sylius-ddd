@@ -10,9 +10,6 @@ return [
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true],
-    Sylius\Ux\Core\SyliusUxCoreBundle::class => ['all' => true],
-    Sylius\Ux\SemanticUi\SyliusUxSemanticUiBundle::class => ['all' => true],
-    Sylius\Ux\Bootstrap\SyliusUxBootstrapBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     winzou\Bundle\StateMachineBundle\winzouStateMachineBundle::class => ['all' => true],
     JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
@@ -29,5 +26,4 @@ return [
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
     Sylius\Bundle\UiBundle\SyliusUiBundle::class => ['all' => true],
-    Sylius\Bundle\ThemeBundle\SyliusThemeBundle::class => ['all' => true],
 ];

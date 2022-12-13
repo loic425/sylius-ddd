@@ -125,9 +125,6 @@
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
-    "loic425/sylius-ux": {
-        "version": "dev-main"
-    },
     "monolog/monolog": {
         "version": "2.4.0"
     },
@@ -243,9 +240,6 @@
         "files": [
             "config/packages/sylius_resource.yaml"
         ]
-    },
-    "sylius/theme-bundle": {
-        "version": "v2.3.0"
     },
     "sylius/ui-bundle": {
         "version": "v1.12.0"

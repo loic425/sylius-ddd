@@ -1,12 +1,12 @@
-sylius_grid:
-    templates:
-        action:
-            create: "@SyliusUxSemanticUi/grid/action/create.html.twig"
-            delete: "@SyliusUxSemanticUi/grid/action/delete.html.twig"
-            show: "@SyliusUxSemanticUi/grid/action/show.html.twig"
-            update: "@SyliusUxSemanticUi/grid/action/update.html.twig"
-            bulkDelete: 
-        filter:
-            string: "@SyliusUxSemanticUi/grid/filter/string.html.twig"
-        bulk_action:
-            delete: "@SyliusUxSemanticUi/grid/bulk_action/delete.html.twig"
+#sylius_grid:
+#    templates:
+#        action:
+#            create: "@SyliusSemanticUi/grid/action/create.html.twig"
+#            delete: "@SyliusSemanticUi/grid/action/delete.html.twig"
+#            show: "@SyliusSemanticUi/grid/action/show.html.twig"
+#            update: "@SyliusSemanticUi/grid/action/update.html.twig"
+#            bulkDelete: 
+#        filter:
+#            string: "@SyliusSemanticUi/grid/filter/string.html.twig"
+#        bulk_action:
+#            delete: "@SyliusSemanticUi/grid/bulk_action/delete.html.twig"
