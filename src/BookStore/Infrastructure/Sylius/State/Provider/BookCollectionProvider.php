@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\BookStore\Infrastructure\Sylius\State\Provider;
 
 use App\BookStore\Infrastructure\Sylius\Repository\BookRepository;
-use Sylius\Bundle\ResourceBundle\Controller\RequestConfiguration;
 use Sylius\Bundle\ResourceBundle\Controller\ResourcesCollectionProviderInterface;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Context\Option\RequestConfigurationOption;

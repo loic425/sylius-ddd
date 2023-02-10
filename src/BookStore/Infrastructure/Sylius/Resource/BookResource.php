@@ -14,18 +14,17 @@ use Sylius\Component\Resource\Metadata\Create;
 use Sylius\Component\Resource\Metadata\Delete;
 use Sylius\Component\Resource\Metadata\Index;
 use Sylius\Component\Resource\Metadata\Resource;
-use Sylius\Component\Resource\Metadata\Section;
 use Sylius\Component\Resource\Metadata\Show;
 use Sylius\Component\Resource\Metadata\Update;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Uid\AbstractUid;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[Resource(alias: 'app.book')]
-#[Section(
-    name: 'admin',
-    routePrefix: 'admin',
+#[Resource(
+    alias: 'app.book',
+    section: 'admin',
     templatesDir: '@SyliusAdminUi/crud',
+    routePrefix: 'admin',
     operations: [
         new Create(
             processor: CreateBookProcessor::class,
@@ -35,8 +34,8 @@ use Symfony\Component\Validator\Constraints as Assert;
             processor: UpdateBookProcessor::class,
         ),
         new Index(
-            grid: 'app_book',
             provider: BookCollectionProvider::class,
+            grid: 'app_book',
         ),
         new Show(
             template: 'admin/book/show.html.twig',
@@ -53,24 +52,24 @@ final class BookResource implements ResourceInterface
     public function __construct(
         public ?AbstractUid $id = null,
 
-        #[Assert\NotNull(groups: ['create'])]
-        #[Assert\Length(min: 1, max: 255, groups: ['create', 'Default'])]
+        #[Assert\NotNull]
+        #[Assert\Length(min: 1, max: 255)]
         public ?string $name = null,
 
-        #[Assert\NotNull(groups: ['create'])]
-        #[Assert\Length(min: 1, max: 1023, groups: ['create', 'Default'])]
+        #[Assert\NotNull]
+        #[Assert\Length(min: 1, max: 1023)]
         public ?string $description = null,
 
-        #[Assert\NotNull(groups: ['create'])]
-        #[Assert\Length(min: 1, max: 255, groups: ['create', 'Default'])]
+        #[Assert\NotNull]
+        #[Assert\Length(min: 1, max: 255)]
         public ?string $author = null,
 
-        #[Assert\NotNull(groups: ['create'])]
-        #[Assert\Length(min: 1, max: 65535, groups: ['create', 'Default'])]
+        #[Assert\NotNull]
+        #[Assert\Length(min: 1, max: 65535)]
         public ?string $content = null,
 
-        #[Assert\NotNull(groups: ['create'])]
-        #[Assert\PositiveOrZero(groups: ['create', 'Default'])]
+        #[Assert\NotNull]
+        #[Assert\PositiveOrZero]
         public ?int $price = null,
     ) {
     }

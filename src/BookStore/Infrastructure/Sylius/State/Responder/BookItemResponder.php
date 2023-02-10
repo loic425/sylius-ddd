@@ -18,7 +18,7 @@ final class BookItemResponder implements ResponderInterface
     /**
      * @param Book|mixed $data
      */
-    public function respond(mixed $data, Operation $operation, Context $context): void
+    public function respond(mixed $data, Operation $operation, Context $context): mixed
     {
         $inputOption = $context->get(InputOption::class);
         $outputOption = $context->get(OutputOption::class);
@@ -46,5 +46,7 @@ final class BookItemResponder implements ResponderInterface
 
         $ui->section('Price');
         $ui->writeln((string) $data->price()->amount);
+
+        return null;
     }
 }

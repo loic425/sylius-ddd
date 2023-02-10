@@ -19,7 +19,7 @@ final class BookCollectionResponder implements ResponderInterface
     /**
      * @param PaginatorInterface|mixed $data
      */
-    public function respond(mixed $data, Operation $operation, Context $context): void
+    public function respond(mixed $data, Operation $operation, Context $context): mixed
     {
         $consoleOption = $context->get(ConsoleOption::class);
         $inputOption = $context->get(InputOption::class);
@@ -35,6 +35,8 @@ final class BookCollectionResponder implements ResponderInterface
 
         $this->renderTable($ui, $data);
         $this->renderPagination($consoleOption->command(), $ui, $data);
+
+        return null;
     }
 
     private function renderPagination(Command $command, SymfonyStyle $ui, PaginatorInterface $paginator): void

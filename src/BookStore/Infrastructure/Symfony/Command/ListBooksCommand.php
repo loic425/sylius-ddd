@@ -21,8 +21,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class ListBooksCommand extends Command
 {
     public function __construct(
-        private readonly ProviderInterface $provider,
-        private readonly ResponderInterface $responder,
+        //private readonly ProviderInterface $provider,
+        //private readonly ResponderInterface $responder,
     ) {
         parent::__construct();
     }
@@ -43,8 +43,8 @@ final class ListBooksCommand extends Command
 
         $context = new Context(new ConsoleOption($this), new InputContextOption($input), new OutputContextOption($output));
 
-        $data = $this->provider->provide($operation, $context);
-        $this->responder->respond($data, $operation, $context);
+        //$data = $this->provider->provide($operation, $context);
+        //$this->responder->respond($data, $operation, $context);
 
         return Command::SUCCESS;
     }
