@@ -6,9 +6,6 @@ use App\BookStore\Domain\Model\Book;
 use App\BookStore\Infrastructure\Sylius\Context\Option\CliOption;
 use App\Shared\Domain\Repository\PaginatorInterface;
 use Sylius\Component\Resource\Context\Context;
-use Sylius\Component\Resource\Context\Option\ConsoleOption;
-use Sylius\Component\Resource\Context\Option\InputOption;
-use Sylius\Component\Resource\Context\Option\OutputOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Command\Command;
@@ -58,7 +55,7 @@ final class BookCollectionResponder implements ResponderInterface
         /** @var Book $book */
         foreach ($paginator->getIterator() as $book) {
             $rows[] = [
-                $book->id()->value,
+                sprintf('<info>bin/console app:show-book %s</info>', $book->id()->value),
                 $book->name()->value,
                 $book->author()->value,
                 $book->price()->amount,
