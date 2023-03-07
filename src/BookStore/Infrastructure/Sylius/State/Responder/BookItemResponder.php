@@ -3,11 +3,14 @@
 namespace App\BookStore\Infrastructure\Sylius\State\Responder;
 
 use App\BookStore\Domain\Model\Book;
+use App\BookStore\Infrastructure\Sylius\Context\Option\CliOption;
+use App\BookStore\Infrastructure\Sylius\Resource\BookResource;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Context\Option\InputOption;
 use Sylius\Component\Resource\Context\Option\OutputOption;
 use Sylius\Component\Resource\Metadata\Operation;
 use Sylius\Component\Resource\State\ResponderInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -20,33 +23,32 @@ final class BookItemResponder implements ResponderInterface
      */
     public function respond(mixed $data, Operation $operation, Context $context): mixed
     {
-        $inputOption = $context->get(InputOption::class);
-        $outputOption = $context->get(OutputOption::class);
+        $cliOption = $context->get(CliOption::class);
 
-        Assert::notNull($inputOption);
-        Assert::notNull($outputOption);
+        Assert::notNull($cliOption);
 
-        $ui = new SymfonyStyle($inputOption->input(), $outputOption->output());
+        $ui = new SymfonyStyle($cliOption->input(), $cliOption->output());
 
         Assert::isInstanceOf($data, Book::class);
+        $book = BookResource::fromModel($data);
 
-        $ui->title($data->name()->value);
+        $ui->title($book->name);
 
         $ui->section('Id');
-        $ui->writeln((string) $data->id());
+        $ui->writeln((string) $book->id);
 
         $ui->section('Author');
-        $ui->writeln($data->author()->value);
+        $ui->writeln($book->author);
 
         $ui->section('Description');
-        $ui->writeln($data->description()->value);
+        $ui->writeln($book->description);
 
         $ui->section('Content');
-        $ui->writeln($data->content()->value);
+        $ui->writeln($book->content);
 
         $ui->section('Price');
-        $ui->writeln((string) $data->price()->amount);
+        $ui->writeln($book->price);
 
-        return null;
+        return Command::SUCCESS;
     }
 }

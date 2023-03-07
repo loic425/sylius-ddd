@@ -3,6 +3,7 @@
 namespace App\BookStore\Infrastructure\Sylius\State\Responder;
 
 use App\BookStore\Domain\Model\Book;
+use App\BookStore\Infrastructure\Sylius\Context\Option\CliOption;
 use App\Shared\Domain\Repository\PaginatorInterface;
 use Sylius\Component\Resource\Context\Context;
 use Sylius\Component\Resource\Context\Option\ConsoleOption;
@@ -21,22 +22,18 @@ final class BookCollectionResponder implements ResponderInterface
      */
     public function respond(mixed $data, Operation $operation, Context $context): mixed
     {
-        $consoleOption = $context->get(ConsoleOption::class);
-        $inputOption = $context->get(InputOption::class);
-        $outputOption = $context->get(OutputOption::class);
+        $cliOption = $context->get(CliOption::class);
 
-        Assert::notNull($consoleOption);
-        Assert::notNull($inputOption);
-        Assert::notNull($outputOption);
+        Assert::notNull($cliOption);
 
-        $ui = new SymfonyStyle($inputOption->input(), $outputOption->output());
+        $ui = new SymfonyStyle($cliOption->input(), $cliOption->output());
 
         Assert::isInstanceOf($data, PaginatorInterface::class);
 
         $this->renderTable($ui, $data);
-        $this->renderPagination($consoleOption->command(), $ui, $data);
+        $this->renderPagination($cliOption->command(), $ui, $data);
 
-        return null;
+        return Command::SUCCESS;
     }
 
     private function renderPagination(Command $command, SymfonyStyle $ui, PaginatorInterface $paginator): void

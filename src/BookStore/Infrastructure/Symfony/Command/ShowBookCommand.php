@@ -2,12 +2,11 @@
 
 namespace App\BookStore\Infrastructure\Symfony\Command;
 
-use App\BookStore\Infrastructure\Sylius\Operation\Cli\Operation;
+use App\BookStore\Infrastructure\Sylius\Context\Option\CliOption;
+use App\BookStore\Infrastructure\Sylius\Operation\Cli\CliOperation;
 use App\BookStore\Infrastructure\Sylius\State\Provider\Cli\BookItemProvider;
 use App\BookStore\Infrastructure\Sylius\State\Responder\BookItemResponder;
 use Sylius\Component\Resource\Context\Context;
-use Sylius\Component\Resource\Context\Option\InputOption;
-use Sylius\Component\Resource\Context\Option\OutputOption;
 use Sylius\Component\Resource\State\ProviderInterface;
 use Sylius\Component\Resource\State\ResponderInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -20,8 +19,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class ShowBookCommand extends Command
 {
     public function __construct(
-        //private readonly ProviderInterface $provider,
-        //private readonly ResponderInterface $responder,
+        private readonly ProviderInterface $provider,
+        private readonly ResponderInterface $responder,
     ) {
         parent::__construct();
     }
@@ -35,15 +34,17 @@ final class ShowBookCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $operation = new Operation();
+        $operation = new CliOperation();
         $operation = $operation->withProvider(BookItemProvider::class);
         $operation = $operation->withResponder(BookItemResponder::class);
 
-        $context = new Context(new InputOption($input), new OutputOption($output));
+        $context = new Context(new CliOption($this, $input, $output));
 
-        //$data = $this->provider->provide($operation, $context);
-        //$this->responder->respond($data, $operation, $context);
+        $data = $this->provider->provide($operation, $context);
 
-        return Command::SUCCESS;
+        /** @var int $response */
+        $response = $this->responder->respond($data, $operation, $context);
+
+        return $response;
     }
 }
